@@ -1,6 +1,7 @@
 version: '3.7'
 services:
-  xray_segmentation_api:
-    image: <user>/<docker-image-name>:latest
+  model_api:
+    build: .
+#    image: <user>/<docker-image-name>:latest
     ports:
       - "8011:80"
