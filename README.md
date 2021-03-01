@@ -9,13 +9,20 @@ Template of simple API for machine learning models deployment
 You can run the backend service directly on your machine, use `docker-compose` to deploy it on a VPS or build it as an image and use that as a backbone of AWS Lambda 
 
 ## Simple run
-
-For debugging perpuses you can run the API by simply starting [main.py](app/main.py)
+`docker-compose.yaml` should look like that:
+```yaml
+version: '3.7'
+services:
+  model_api:
+    build: .
+#    image: <user>/<docker-image-name>:latest
+    ports:
+      - "8011:80"
+```
+and just run
 
 ```
-cd app
-
-python main.app
+docker-compose up
 ```
 
 The service will be avalible at: [127.0.0.1:8011/docs](http://127.0.0.1:8011/docs)
@@ -43,12 +50,13 @@ docker push <user>/<docker-image-name>:latest
 
 Modify `docker-compose.yaml`
 
-Replace `<user>/<docker-image-name>` in [docker-compose.yaml](docker-compose.yaml) and commit the change
+Replace `<user>/<docker-image-name>` in [docker-compose.yaml](docker-compose.yaml), comment `build` and commit the change
 
 ```yaml
 version: '3.7'
 services:
-  xray_segmentation_api:
+  model_api:
+#    build .
     image: <user>/<docker-image-name>:latest
     ports:
       - "81:80"
