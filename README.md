@@ -10,6 +10,9 @@ You can run the backend service directly on your machine, use `docker-compose` t
 
 ## Automatic code deployement
 
+On push the code will be automaticly deployed to docker-hub
+
+
 ## Simple run
 `docker-compose.yaml` should look like that:
 ```yaml
