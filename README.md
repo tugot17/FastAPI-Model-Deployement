@@ -8,6 +8,8 @@ Template of simple API for machine learning models deployment
 
 You can run the backend service directly on your machine, use `docker-compose` to deploy it on a VPS or build it as an image and use that as a backbone of AWS Lambda 
 
+## Automatic code deployement
+
 ## Simple run
 `docker-compose.yaml` should look like that:
 ```yaml
