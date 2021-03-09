@@ -24,5 +24,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: tugot17/fastapi-deployment
+          repository: <user>/<docker-image-name>:latest
           tag_with_ref: true
