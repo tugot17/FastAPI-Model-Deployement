@@ -34,26 +34,17 @@ The service will be avalible at: [127.0.0.1:8011/docs](http://127.0.0.1:8011/doc
 
 ## On VPS, EC2 or similar services
 
-```bash
-cd FastAPI-Model-Deployement
-```
+We use automatic docker build and push using Github Actions. So eveyryting you need to do is to commit you changes, update values in `docker.yml` and `docker-compose.yaml` and that is basicly it, you are good to go
 
+1. Update [docker._yml](.github/workflows/docker._yml)
 
-Build docker image
+Rename it to `docker.yml`
+Set `DOCKER_USERNAME` and `DOCKER_PASSWORD` in your repository secrets
+Replace line 34 `repository: <user>/<docker-image-name>:latest` with the proper repository name (the one to which you want to push it)
 
-```bash
-docker build -t <user>/<docker-image-name>:latest .
-```
+Save it
 
-Push image to dockerhub
-
-```bash
-docker login
-
-docker push <user>/<docker-image-name>:latest
-```
-
-Modify `docker-compose.yaml`
+2. Modify `docker-compose.yaml`
 
 Replace `<user>/<docker-image-name>` in [docker-compose.yaml](docker-compose.yaml), comment `build` and commit the change
 
@@ -67,13 +58,13 @@ services:
       - "81:80"
 ```
 
-Clone your repo on a remote machine
+3. Clone your repo on a remote machine
 
 ```bash
 git clone <link-to-your-repo>
 ```
 
-Run `docker-compose up` on remote machine
+4. Run `docker-compose up` on remote machine
 
 ```bash
 docker-compose up
