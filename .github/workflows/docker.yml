@@ -1,6 +1,17 @@
 name: Publish Docker image
 on:
-  [push]
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - '**/README.md'
+      
+  pull_request:
+    branches:
+      - master
+    paths-ignore:
+      - '**/README.md'
+
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
