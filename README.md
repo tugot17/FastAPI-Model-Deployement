@@ -36,7 +36,9 @@ We use automatic docker build and push using Github Actions. So eveyryting you n
 *disclaimer: update this values directly on gihtub, don't push it from the repo (it is possible but requires additional actions) 
 
 Rename it to `docker.yml`
+
 Set `DOCKER_USERNAME` and `DOCKER_PASSWORD` in your repository secrets
+
 Replace line 34 `repository: <user>/<docker-image-name>:latest` with the proper repository name (the one to which you want to push it)
 
 Save it
