@@ -2,13 +2,13 @@ name: Publish Docker image
 on:
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - '**/README.md'
       
   pull_request:
     branches:
-      - master
+      - main
     paths-ignore:
       - '**/README.md'
 
