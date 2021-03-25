@@ -22,8 +22,8 @@ jobs:
       - name: Push to Docker Hub
         uses: docker/build-push-action@v1
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}}
           registry: docker.pkg.github.com
           repository: tugot17/fastapi-model-deployement:latest
           tag_with_ref: true
